@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="estate_property_views_form_inherit" model="ir.ui.view">
+            <field name="name">estate.form.inherit</field>
+            <field name="model">estate.property</field>
+            <field name="inherit_id" ref="estate.estate_property_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_sold']" position="replace">
+                    <button name="%(estate_account.estate_wiz_action)d" type="action" string="Sell and Pay" invisible="state != 'offer_accepted' " class="oe_highlight" groups="estate.estate_admin"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

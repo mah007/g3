@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="web_template">
+            <t t-call="website.layout">
+
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24" data-vcss="001"
+                                 data-snippet="s_title" data-scroll-background-ratio="1">
+                            <div class="o_we_bg_filter bg-black-50"/>
+                            <div class="container">
+                                <h1>Welcome To Property Manager</h1>
+
+                            </div>
+
+
+                        </section>
+                        <div class="container">
+                             <section class="center-block">
+                            <div class="col-4">
+                                <h5>
+                                     Number of Properties:
+                            <span t-esc="count"/>
+                                </h5>
+
+                            </div>
+
+                        </section>
+                        </div>
+
+                        <section class="container">
+                            <t t-foreach="properties" t-as="prop">
+                                <div class="card">
+                                    <div class="card-body">
+
+
+                                        <h3>Name:
+                                            <span t-esc="prop.name"/>
+                                        </h3>
+                                        <div class="label-alpha">
+                                            Selling Price:
+                                            <span t-esc="prop.selling_price"/>
+                                            LE
+                                        </div>
+                                        <div class="col-3">
+                                            <a t-attf-href="/estate/template/prop/#{prop.id}"
+                                               class="btn btn-success form-control">View Property Details
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </t>
+
+                        </section>
+
+
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+
+            </t>
+        </template>
+
+
+        <template id="web_template_property">
+            <t t-call="website.layout">
+
+                <div id="wrap">
+                    <div class="oe_structure">
+
+
+                        <section class="container">
+                            <br/>
+                            <br/>
+                            <div class="center-block">
+                                 <t t-foreach="properties" t-as="prop">
+
+                            <div class="card">
+                                <div class="card-body">
+
+
+                                    <h3>Name:
+                                        <span t-esc="prop.name"/>
+                                    </h3>
+                                    <div class="label-alpha">
+                                        Selling Price:
+                                        <span t-esc="prop.selling_price"/>
+                                        LE
+                                    </div>
+                                    <div class="label-alpha-dark">
+                                        Price Per/Meter
+                                        <span t-field="prop.price_per_m"/>
+                                        M^2
+                                    </div>
+
+                                </div>
+                            </div>
+                            </t>
+                            </div>
+
+                        </section>
+
+
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+
+            </t>
+        </template>
+
+
+    </data>
+</odoo>
