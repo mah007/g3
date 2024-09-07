@@ -8,7 +8,7 @@
 create invoice for real estate module
     """,
 
-    'author': "Mahmoud",
+    'author': "Mahmoud Abdel Latif",
     'website': "https://www.mah007.com",
 
 
